@@ -1,0 +1,15 @@
+CREATE TABLE tag(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    articleId INTEGER NOT NULL,
+    name TEXT,
+    url TEXT
+);
+
+selectByArticleId:
+SELECT * FROM tag WHERE articleId = ?;
+
+deleteByArticleId:
+DELETE FROM tag WHERE articleId = ?;
+
+saveTag:
+INSERT OR REPLACE INTO tag(articleId, name, url) VALUES (?, ?, ?);

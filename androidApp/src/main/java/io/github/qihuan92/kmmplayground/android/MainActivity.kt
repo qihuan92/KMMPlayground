@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -17,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.github.qihuan92.kmmplayground.Greeting
+import io.github.qihuan92.kmmplayground.entity.Article
 
 @Composable
 fun MyApplicationTheme(
@@ -70,6 +73,23 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+@Composable
+fun ArticleList() {
+    LazyColumn {
+        item() {
+            ArticleItem(article =)
+        }
+    }
+}
+
+@Composable
+fun ArticleItem(article: Article) {
+    Column {
+        Text(text = article.title.orEmpty())
+        Text(text = article.desc.orEmpty())
     }
 }
 

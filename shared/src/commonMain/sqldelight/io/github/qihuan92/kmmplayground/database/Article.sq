@@ -1,0 +1,23 @@
+CREATE TABLE article(
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT,
+    author TEXT,
+    desc TEXT,
+    descMd TEXT,
+    link TEXT,
+    chapterId INTEGER,
+    superChapterId INTEGER,
+    superChapterName TEXT,
+    niceDate TEXT,
+    zan INTEGER AS Int
+);
+
+selectAll:
+SELECT * FROM article;
+
+deleteAll:
+DELETE FROM article;
+
+save:
+INSERT OR REPLACE INTO article(id, title, author, desc, descMd, link, chapterId, superChapterId, superChapterName, niceDate, zan)
+VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
